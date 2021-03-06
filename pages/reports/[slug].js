@@ -144,20 +144,31 @@ export default function Post({ post, preview }) {
         {/* <PostBody content={post.stContent} /> */}
         {/* <ReportContent content={post.stContent} /> */}
 
-        {post.content?.map((item) => (
-          <GridArticle key={item.id} aside={<ReportAside content={item} />}>
-            <VStack align="flex-start" spacing={2} textStyle="article" pr="w5">
-              <ReactMarkdown
-                key={item.id}
-                allowDangerousHtml
-                className="md-prose"
-                linkTarget="_blank"
-              >
-                {item.text}
-              </ReactMarkdown>
-            </VStack>
-          </GridArticle>
-        ))}
+        <VStack align="flex-start" spacing="w6">
+          {post.content?.map((item) => (
+            <GridArticle
+              key={item.id}
+              aside={
+                <ReportAside
+                  footnote={item.footnote}
+                  footnoteImage={item.footnoteImage}
+                  insights={item.insights}
+                />
+              }
+            >
+              <Text as="div" pr="w5">
+                <ReactMarkdown
+                  key={item.id}
+                  allowDangerousHtml
+                  className="md-prose"
+                  linkTarget="_blank"
+                >
+                  {item.text}
+                </ReactMarkdown>
+              </Text>
+            </GridArticle>
+          ))}
+        </VStack>
 
         <GridArticle>
           <Container layerStyle="spaceXlY">
