@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
-import { Box, VStack, HStack, StackDivider, Text } from "@chakra-ui/react";
+import { Box, VStack, HStack, Text } from "@chakra-ui/react";
 import ReactMarkdown from "react-markdown";
 
-export default function AsideCard({ item }: AsideCardProps) {
+export default function AsideCard({ item }) {
   const Tag = ({ children }) => (
     <Text
       textStyle="textSmMeta"
@@ -45,7 +46,7 @@ export default function AsideCard({ item }: AsideCardProps) {
         )}
       </Box>
       <Box pt={1}>
-        <Link href={item.slug}>
+        <Link href={item.slug} passHref>
           <Tag>Learn more</Tag>
         </Link>
       </Box>
@@ -53,19 +54,26 @@ export default function AsideCard({ item }: AsideCardProps) {
   );
 }
 
-export interface AsideCardProps {
-  item: Array<{
-    id: string;
-    title: string;
-    lede: string;
-    slug: string;
-    sources?: Array<{
-      slug: string;
-      title: string;
-    }>;
-    tags?: Array<{
-      slug: string;
-      name: string;
-    }>;
-  }>;
-}
+AsideCard.propTypes = {
+  item: PropTypes.any,
+};
+AsideCard.propTypes = {
+  item: {},
+};
+
+// export interface AsideCardProps {
+//   item: Array<{
+//     id: string;
+//     title?: string;
+//     lede?: string;
+//     slug?: string;
+//     sources?: Array<{
+//       slug: string;
+//       title: string;
+//     }>;
+//     tags?: Array<{
+//       slug: string;
+//       name: string;
+//     }>;
+//   }>;
+// }
