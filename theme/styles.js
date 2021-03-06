@@ -99,8 +99,10 @@ const styles = {
         fontWeight: "600",
         letterSpacing: "0",
       },
-      "h3:not(:last-child)": {
+      "h3:not(:first-child)": {
         mt: "w3",
+      },
+      "h3:not(:last-child)": {
         mb: "w1",
       },
       "h2 + h3": {
