@@ -10,7 +10,7 @@
 const styles = {
   global: {
     body: {
-      fontFamily: "body",
+      fontFamily: "sans",
       bg: "white",
       color: "black",
       fontSize: "16px",
@@ -44,54 +44,48 @@ const styles = {
     ".active": {
       fontWeight: "bold",
     },
-    ".tertiary-nav a": {
-      // py: "2",
-      display: "block",
-      ml: "4",
-      mr: "4",
-      py: "1",
-      // whiteSpace: "nowrap",
-    },
-    ".tertiary-nav li": {
-      borderRight: "1px solid black",
-    },
-    ".tertiary-nav li:nth-of-type(1) a": {
-      ml: "0",
-    },
-    ".tertiary-nav li:last-child": {
-      borderRight: "0",
-    },
-    ".tertiary-nav li:last-child a": {
-      borderRight: "none",
-      mr: "0",
-    },
-    ".how-it-works-steps": {
-      counterReset: "counter",
-    },
-    ".how-it-works-steps li": {
-      counterIncrement: "counter",
-      position: "relative",
-      paddingTop: ["25px", "", "61px"],
-      paddingRight: ["0", "", "100px"],
-      marginTop: ["25px", "45px", "45px"],
-    },
-    ".how-it-works-steps li:nth-of-type(even)": {
-      marginLeft: ["0", "", "196px"],
-    },
-    ".how-it-works-steps li h3::before": {
-      content: "counter(counter)",
-      display: ["block"],
-      fontSize: ["80px", "80px", "120px"],
-      fontWeight: "300",
-      lineHeight: ["60px", "60px", "86px"],
-      marginBottom: ["4", "4", "0"],
-      position: ["relative", "", "absolute"],
-      width: ["auto", "auto", "100px"],
-      bottom: ["auto", "auto", "4px"],
-      right: ["auto", "auto", "-100px"],
-    },
-    /* MDX overrides */
+
+    /* React-markdown & MDX duplicates */
     ".md-prose": {
+      a: {
+        textDecoration: "underline",
+      },
+      p: {
+        fontFamily: "serif",
+        fontSize: { base: "16px", lg: "18px", xl: "20px" },
+        fontWeight: "400",
+        letterSpacing: "0",
+      },
+      "p:not(:last-child)": {
+        mb: "w2",
+      },
+      blockquote: {
+        pl: 5,
+        borderLeft: "2px solid",
+        borderColor: "pewter.300",
+      },
+      "blockquote p": {
+        fontSize: { base: "18px", lg: "20px", xl: "24px" },
+        fontWeight: "400",
+        fontStyle: "italic",
+        lineHeight: "1.3",
+        letterSpacing: "0",
+        color: "pewter.700",
+      },
+      "blockquote p span": {
+        d: "table",
+        pt: 1,
+        fontSize: { base: "12px", lg: "15px", xl: "16px" },
+        fontFamily: "sans",
+        fontWeight: "400",
+        fontStyle: "normal",
+        lineHeight: "1.5",
+        letterSpacing: "0",
+        color: "pewter.700",
+      },
+      "blockquote:not(:last-child)": {
+        mb: "w2",
+      },
       h1: {
         fontSize: ["36px"],
       },
@@ -100,7 +94,14 @@ const styles = {
         lineHeight: 1.1,
       },
       h3: {
-        fontSize: ["18px"],
+        fontFamily: "sans",
+        fontSize: { base: "18px", lg: "20px", xl: "22px" },
+        fontWeight: "600",
+        letterSpacing: "0",
+      },
+      "h3:not(:last-child)": {
+        mt: "w3",
+        mb: "w1",
       },
       "h2 + h3": {
         mt: [3],
@@ -120,9 +121,6 @@ const styles = {
       },
       "tbody > tr:last-of-type": {
         borderColor: "black",
-      },
-      a: {
-        textDecoration: "underline",
       },
     },
     ".prose": {

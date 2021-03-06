@@ -13,16 +13,15 @@
 const textStyles = {
   text6xl: {
     fontSize: { base: "38px", md: "48px", lg: "54px", xxl: "64px" },
-    fontWeight: "300",
+    fontWeight: "400",
     lineHeight: "none",
-    letterSpacing: "-0.025em",
+    letterSpacing: "0.01em",
   },
   text5xl: {
     fontSize: { base: "32px", md: "40px", lg: "44px", xl: "54px" },
-    fontWeight: "700",
+    fontWeight: "400",
     lineHeight: "title",
-    letterSpacing: "-0.01em",
-    textTransform: "uppercase",
+    letterSpacing: "0.01em",
   },
   text4xl: {
     fontSize: { base: "28px", md: "30px", lg: "36px", xl: "42px" },
@@ -56,21 +55,27 @@ const textStyles = {
     letterSpacing: "-0.005em",
   },
   textLg: {
-    fontSize: { base: "15px", sm: "18px", lg: "20px", xl: "21px" },
+    fontSize: { base: "15px", sm: "18px", lg: "20px" },
     fontWeight: "300",
     lineHeight: "short",
-    letterSpacing: "-0.005em",
+    letterSpacing: "0.005em",
   },
   article: {
-    fontFamily: "text",
+    fontFamily: "serif",
     fontSize: { base: "14px", lg: "16px", xl: "18px" },
     fontWeight: "400",
     letterSpacing: "-0.005em",
   },
+  aside: {
+    fontFamily: "sans",
+    fontSize: { base: "12px", lg: "14px", xl: "15px" },
+    fontWeight: "400",
+    letterSpacing: "0",
+  },
   textMd: {
     fontSize: { base: "14px", lg: "16px", xl: "18px" },
     fontWeight: "300",
-    letterSpacing: "-0.005em",
+    letterSpacing: "0.005em",
   },
   textBody: {
     fontSize: { base: "14px", lg: "15px", xl: "16px" },
@@ -79,7 +84,7 @@ const textStyles = {
   },
   textSmMeta: {
     fontSize: { base: "12px", lg: "13px", xl: "14px" },
-    fontWeight: "700",
+    fontWeight: "600",
     lineHeight: "short",
     textTransform: "uppercase",
   },

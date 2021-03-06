@@ -10,7 +10,17 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          {/* preload fonts */}
+          <link
+            rel="preload"
+            as="font"
+            crossOrigin=""
+            href="/fonts/SuisseIntl-Light.woff2"
+          />
+          {/* viewport-basis variables */}
+          <link rel="stylesheet" href="/utils.css" />
+        </Head>
         <body>
           <Main />
           <NextScript />

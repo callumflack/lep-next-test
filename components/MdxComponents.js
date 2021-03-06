@@ -25,8 +25,9 @@ const mdxComponents = {
   h3: (props) => (
     <Text
       as="h3"
-      textStyle="textMd"
+      textStyle="textLg"
       fontWeight="bold"
+      fontFamily="sans"
       marginTop={8}
       mb={3}
       {...props}

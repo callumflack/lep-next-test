@@ -53,13 +53,14 @@ const typography = {
     black: 900,
   },
   fonts: {
-    heading:
-      'SuisseIntl, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    body:
-      'SuisseIntl, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    text: 'Cambon, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+    title:
+      'Feijoa, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+    sans:
+      'Söhne, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    serif:
+      'Signifier, Cambon, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
     mono:
-      'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+      '"Söhne-Mono", SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
 };
 

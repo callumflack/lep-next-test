@@ -1,29 +1,33 @@
 import * as React from "react";
 import { Box, Text } from "@chakra-ui/react";
 import AlertPreview from "@/components/AlertPreview";
-import MessageBar from "@/components/MessageBar";
+import Navbar from "@/components/Navbar";
+// import MessageBar from "@/components/MessageBar";
 import Headroom from "react-headroom";
 
 const Layout = ({ preview, children }: Props) => {
-  const [isDismissed, setIsDismissed] = React.useState(false);
+  // const [isDismissed, setIsDismissed] = React.useState(false);
 
   return (
     <>
       <Box role="banner" as="header" zIndex={10} pos="relative">
         <Headroom>
-          {!isDismissed && (
+          {/* {!isDismissed && (
             <MessageBar
               description="Hey I'm a messagebar:"
               onDismiss={setIsDismissed}
               btnText="go home"
               actionLink="/"
             />
-          )}
-          <Text align="center">I will be the navbar</Text>
+          )} */}
+          <Navbar />
         </Headroom>
       </Box>
 
-      <AlertPreview preview={preview} />
+      {/* Coming soon… */}
+      <Box d="none">
+        <AlertPreview preview={preview} />
+      </Box>
 
       <Box as="main" role="main" pos="relative">
         {children}

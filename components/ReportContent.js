@@ -1,4 +1,7 @@
 import dynamic from "next/dynamic";
+import { Box } from "@chakra-ui/react";
+// import GridArticle from "@/components/GridArticle";
+// import ReactMarkdown from "react-markdown";
 
 // https://github.com/vercel/next.js/discussions/11291#discussioncomment-4303
 const componentList = {
@@ -14,9 +17,9 @@ export default function ReportContent({ data }) {
     <>
       {components.map((Component, index) => {
         return (
-          <li key={index}>
+          <Box key={index}>
             <Component />
-          </li>
+          </Box>
         );
       })}
     </>

@@ -40,7 +40,29 @@ export const spacing = {
   // https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()
   // can be used anywhere a <length>, <frequency>, <angle>, <time>, <percentage>, <number>, or <integer> is allowed.
   // min, preferred and max values
-  w1: "clamp(0.8em, 1.5vw, 2em)",
+  w05: "clamp(0.2em, 0.333vw, 0.333em)",
+  w1: "clamp(0.25em, 0.5vw, 0.5em)",
+  w2: "clamp(0.5em, 0.8vw, 1em)",
+  w3: "clamp(1em, 1.25vw, 1.5em)",
+  w4: "clamp(1.25em, 1.5vw, 2em)",
+  w5: "clamp(1.5em, 2vw, 2.5em)",
+  w6: "clamp(2.5em, 4vw, 5em)",
+
+  /* DYNAMIC: requires --viewport-basis set to :root */
+  inset: "var(--grid-inset)",
+  gap: "var(--grid-gap)",
+  nav: "var(--nav-height)",
+  // w1: "calc(8 / var(--viewport-basis) * 100vw)",
+  // w2: "calc(16 / var(--viewport-basis) * 100vw)",
+  // w3: "calc(24 / var(--viewport-basis) * 100vw)",
+  // w4: "calc(32 / var(--viewport-basis) * 100vw)",
+  // w5: "calc(40 / var(--viewport-basis) * 100vw)",
+  // w6: "calc(80 / var(--viewport-basis) * 100vw)",
+  w7: "calc(120 / var(--viewport-basis) * 100vw)",
+  w8: "calc(160 / var(--viewport-basis) * 100vw)",
+  w9: "calc(240 / var(--viewport-basis) * 100vw)",
+  w10: "calc(320 / var(--viewport-basis) * 100vw)",
+  w11: "calc(560 / var(--viewport-basis) * 100vw)",
 };
 
 /**

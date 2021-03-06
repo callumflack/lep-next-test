@@ -1,0 +1,18 @@
+:root: {
+  --viewport-basis: 768;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --viewport-basis: 1024;
+  }
+}
+@media (min-width: 1240px) {
+  :root {
+    --viewport-basis: 1440;
+  }
+}
+@media (min-width: 1520px) {
+  :root {
+    --viewport-basis: 1680;
+  }
+}

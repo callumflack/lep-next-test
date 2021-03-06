@@ -15,6 +15,17 @@ const colors = {
     good: "#38a169",
     bad: "#e53e3e",
   },
+  // https://coolors.co/a1b8be
+  pewter: {
+    100: "#F2F5F6",
+    200: "#DEE6E8",
+    300: "#CAD7DA",
+    400: "#B6C8CC",
+    500: "#a1b8be",
+    // 600: "#84A2AA",
+    600: "#75979F",
+    700: "#526F77",
+  },
   // https://coolors.co/b2dff5
   uranianblue: {
     400: "#BFE4F7",
