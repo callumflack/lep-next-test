@@ -58,7 +58,7 @@ const typography = {
     sans:
       'Söhne, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     serif:
-      'Signifier, Cambon, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+      'quadraat, Signifier, Cambon, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
     mono:
       '"Söhne-Mono", SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },

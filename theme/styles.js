@@ -50,14 +50,31 @@ const styles = {
       a: {
         textDecoration: "underline",
       },
-      p: {
+      "p, ul": {
         fontFamily: "serif",
         fontSize: { base: "16px", lg: "18px", xl: "20px" },
         fontWeight: "400",
         letterSpacing: "0",
       },
-      "p:not(:last-child)": {
-        mb: "w2",
+      "ul, ol": {
+        pl: 5,
+      },
+      h1: {
+        fontSize: ["36px"],
+      },
+      h2: {
+        fontFamily: "sans",
+        fontSize: { base: "21px", lg: "22px", xl: "24px" },
+        fontWeight: "500",
+        lineHeight: "1.3",
+        letterSpacing: "0",
+      },
+      h3: {
+        fontFamily: "sans",
+        fontSize: { base: "18px", lg: "20px", xl: "21px" },
+        fontWeight: "500",
+        lineHeight: "1.3",
+        letterSpacing: "0",
       },
       blockquote: {
         pl: 5,
@@ -83,30 +100,21 @@ const styles = {
         letterSpacing: "0",
         color: "pewter.700",
       },
+      // spacing
+      "p:not(:last-child), ul:not(:last-child)": {
+        mb: "w2",
+      },
       "blockquote:not(:last-child)": {
         mb: "w2",
       },
-      h1: {
-        fontSize: ["36px"],
+      "h2:not(:first-of-type), h3:not(:first-of-type)": {
+        mt: "w5",
       },
-      h2: {
-        fontSize: ["27px"],
-        lineHeight: 1.1,
-      },
-      h3: {
-        fontFamily: "sans",
-        fontSize: { base: "18px", lg: "20px", xl: "22px" },
-        fontWeight: "600",
-        letterSpacing: "0",
-      },
-      "h3:not(:first-child)": {
-        mt: "w3",
-      },
-      "h3:not(:last-child)": {
-        mb: "w1",
+      "h2:not(:last-child), h3:not(:last-child)": {
+        mb: "w2",
       },
       "h2 + h3": {
-        mt: [3],
+        mt: "w2",
       },
       "td + td": {
         pl: [3],

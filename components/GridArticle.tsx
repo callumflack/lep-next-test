@@ -5,15 +5,18 @@ const GridArticle = ({ as = "section", children, aside, ...props }: Props) => (
   <Grid
     as={as}
     w="full"
-    gap={{ base: 10, "2xl": 20 }}
+    px="w5"
+    gap={{ base: 4, "2xl": 5 }}
     templateColumns={{
       base: "repeat(1, minmax(0, 1fr))",
       lg: "repeat(12, minmax(0, 1fr))",
     }}
     {...props}
   >
-    <Box gridColumn={{ base: "1/-1", lg: "3/9", "2xl": "3/9" }}>{children}</Box>
-    <Box gridColumn={{ base: "1/-1", lg: "9/12", "2xl": "9/12" }} pt={1}>
+    <Box gridColumn={{ base: "1/-1", lg: "4/10", "3xl": "4/8" }} pr="w6">
+      {children}
+    </Box>
+    <Box gridColumn={{ base: "1/-1", lg: "10/12", "3xl": "9/11" }} pt={1}>
       {aside}
     </Box>
   </Grid>

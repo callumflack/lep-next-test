@@ -62,9 +62,9 @@ const textStyles = {
   },
   article: {
     fontFamily: "serif",
-    fontSize: { base: "14px", lg: "16px", xl: "18px" },
-    fontWeight: "400",
-    letterSpacing: "-0.005em",
+    fontSize: { base: "16px", lg: "18px", xl: "21px" },
+    fontWeight: "300",
+    letterSpacing: "0",
   },
   aside: {
     fontFamily: "sans",

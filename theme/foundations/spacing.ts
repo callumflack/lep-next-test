@@ -37,15 +37,23 @@ export const spacing = {
 
   // dynamic tests
   // https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/
+
   // https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()
   // can be used anywhere a <length>, <frequency>, <angle>, <time>, <percentage>, <number>, or <integer> is allowed.
+
   // min, preferred and max values
-  w05: "clamp(0.2em, 0.333vw, 0.333em)",
+  // min & max: If the preferred value is less / more than this value, the min / max value will be used.
+  // The preferred value is the expression whose value will be used as long as the result is between the minimum and maximum values.
+
+  // https://frankchimero.com/blog/2020/redesign-wrapping-up/
+  // font-size: clamp(18px, 1.4vw, 22px);
+  // The minimum font size is 18px, the max is 22px, and in-between, it will be sized relative to 1.4% of the viewport width, meaning relative sizing will kick in once the window is wider than about 1200px
+  w05: "clamp(0.15em, 0.333vw, 0.333em)",
   w1: "clamp(0.25em, 0.5vw, 0.5em)",
   w2: "clamp(0.5em, 0.8vw, 1em)",
   w3: "clamp(1em, 1.25vw, 1.5em)",
   w4: "clamp(1.25em, 1.5vw, 2em)",
-  w5: "clamp(1.5em, 2vw, 2.5em)",
+  w5: "clamp(1.75em, 2.5vw, 3.25em)",
   w6: "clamp(2.5em, 4vw, 5em)",
 
   /* DYNAMIC: requires --viewport-basis set to :root */

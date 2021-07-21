@@ -15,15 +15,20 @@ import {
   Text,
 } from "@chakra-ui/react";
 import LayoutBase from "@/components/LayoutBase";
-import GridArticle from "@/components/GridArticle";
+import GridArticleContainer from "@/components/GridArticleContainer";
 import ReactMarkdown from "react-markdown";
 import ReportAside from "@/components/Report/Aside";
+import ReportHgroupTitle from "@/components/Report/HgroupTitle";
+import ReportHgroupMeta from "@/components/Report/HgroupMeta"; // import ReportText from "@/components/Report/Text";
 // import ReportAsideFootnote from "@/components/Report/AsideFootnote";
 // import { PostBody } from "@/components/PostBody";
 // import ReportContent from "@/components/ReportContent";
 // import MediaImage from "@/components/MediaImage";
 // import { getAllReportsBySlug, getPostAndMorePosts } from "@/lib/api";
 // import { getReportBySlug, getAllReportsWithSlug } from "@/lib/pages/Reports";
+// import MdxWrapper from "@/components/MdxWrapper";
+// import MdxComponents from "@/components/MdxComponents";
+// import renderToString from "next-mdx-remote/render-to-string";
 import { getReportQuery } from "@/lib/pages/Reports";
 import { request } from "@/lib/datocms";
 import * as helpers from "@/lib/report-helpers";
@@ -71,110 +76,71 @@ export default function Post({ post, preview }) {
     <LayoutBase preview={preview}>
       <Head>{post && renderMetaTags(post.seo)}</Head>
 
-      <VStack align="flex-start" spacing="w3" pt="w5">
+      <VStack w="full" align="flex-start" spacing="w3">
         {/* TODO: loading  */}
         {/* {router.isFallback ? () : ()} */}
 
-        <GridArticle>
-          <VStack align="flex-start" spacing="w2" pos="relative" pr="w5">
-            <Box>
-              <Text
-                textStyle="textBody"
-                fontFamily="sans"
-                fontWeight="600"
-                textTransform="uppercase"
-                letterSpacing="0.0666em"
-                mb="6px"
-              >
-                Reports
-              </Text>
-              <Text
-                as="h1"
-                textStyle="text6xl"
-                fontFamily="title"
-                pos="relative"
-                transform="translateX(-0.075em)"
-              >
-                {post.title}
-              </Text>
-            </Box>
-            <Text
-              as="h2"
-              textStyle="textLg"
-              fontFamily="sans"
-              fontWeight="400"
-              letterSpacing="0.0em"
-              color="pewter.700"
-            >
-              {post.heroLede}
-            </Text>
-
-            <Box
-              w="full"
-              borderTop="1px solid"
-              borderBottom="1px solid"
-              borderColor="pewter.300"
-              pb="3px"
-            >
-              <HStack
-                py="w1"
-                color="pewter.600"
-                spacing={3}
-                divider={<StackDivider borderColor="pewter.300" />}
-              >
-                <Text textStyle="TextBody" fontFamily="sans" fontWeight="400">
-                  Published {helpers.getDateStr(post.datePublished)}
-                </Text>
-                <Text textStyle="TextBody" fontFamily="sans" fontWeight="400">
-                  Written by O-K
-                </Text>
-              </HStack>
-            </Box>
-          </VStack>
-          {/* <PostHeader
-          title={post.title}
-          coverImage={post.coverImage}
-          date={post.date}
-          author={post.author}
-          />
-        <PostBody content={post.content} /> */}
-        </GridArticle>
+        {/* HERO */}
+        {/* yellow "#ffdd08c2" blue #bcd7dbc2> */}
+        <Box w="full" as="header" bg="transparent" mb="w6">
+          <GridArticleContainer py="w8" as="div">
+            <VStack align="flex-start" spacing="w2" pos="relative" pr="w5">
+              <ReportHgroupTitle
+                title={post.title}
+                lede={post.heroLede}
+              ></ReportHgroupTitle>
+              <ReportHgroupMeta
+                date={post.datePublished}
+                authors="Kasey Klime and Oshan Jarrow"
+              ></ReportHgroupMeta>
+            </VStack>
+          </GridArticleContainer>
+        </Box>
 
         {/* Dato Structured Text test. Upgrade the package first: https://github.com/datocms/nextjs-demo/issues/11 */}
         {/* <PostBody content={post.stContent} /> */}
         {/* <ReportContent content={post.stContent} /> */}
 
-        <VStack align="flex-start" spacing="w6">
-          {post.content?.map((item) => (
-            <GridArticle
-              key={item.id}
-              aside={
-                <ReportAside
-                  footnote={item.footnote}
-                  footnoteImage={item.footnoteImage}
-                  insights={item.insights}
-                />
-              }
-            >
-              <Text as="div" pr="w5">
-                <ReactMarkdown
+        <VStack w="full" align="flex-start" spacing="w6">
+          {post.content?.map((item) => {
+            // const mdxSource = await renderToString(item.text, { components: MdxComponents });
+
+            return (
+              <GridArticleContainer
+                key={item.id}
+                aside={
+                  <ReportAside
+                    footnote={item.footnote}
+                    footnoteImage={item.footnoteImage}
+                    insights={item.insights}
+                  />
+                }
+              >
+                <Text as="div" pr={{ xl: "w4" }}>
+                  <ReactMarkdown
+                    key={item.id}
+                    allowDangerousHtml
+                    className="md-prose"
+                    linkTarget="_blank"
+                  >
+                    {item.text}
+                  </ReactMarkdown>
+                </Text>
+                {/* <ReportText
                   key={item.id}
-                  allowDangerousHtml
-                  className="md-prose"
-                  linkTarget="_blank"
-                >
-                  {item.text}
-                </ReactMarkdown>
-              </Text>
-            </GridArticle>
-          ))}
+                  source={item.text}
+                  pr={{ xl: "w4" }}
+                /> */}
+              </GridArticleContainer>
+            );
+          })}
         </VStack>
 
-        <GridArticle>
-          <Container layerStyle="spaceXlY">
+        <GridArticleContainer>
+          <Container py="w9">
             {/* {morePosts.length > 0 && <Text>there are more posts…</Text>} */}
           </Container>
-        </GridArticle>
+        </GridArticleContainer>
       </VStack>
     </LayoutBase>
   );

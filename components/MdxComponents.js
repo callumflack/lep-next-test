@@ -1,14 +1,22 @@
 /* eslint-disable */
 import React from "react";
 import { Text, Box } from "@chakra-ui/react";
+import GridArticle from "@/components/GridArticle";
+import MyBackground from "@/components/MyBackground";
+import MyButton from "@/components/MyButton";
+import ReportAside from "@/components/Report/Aside";
 
 const mdxComponents = {
+  GridArticle: (props) => <GridArticle {...props} />,
+  ReportAside: (props) => <ReportAside {...props} />,
+  MyBackground: (props) => <MyBackground {...props} />,
+  MyButton: (props) => <MyButton {...props} />,
   h1: (props) => (
     <Text
       as="h1"
       textStyle="text3xl"
       textTransform="uppercase"
-      mb={3}
+      _notLast={{ mb: 3 }}
       {...props}
     />
   ),
@@ -17,30 +25,30 @@ const mdxComponents = {
       as="h2"
       textStyle="textSmMeta"
       textTransform="uppercase"
-      marginTop={8}
-      mb={3}
+      _notFirst={{ mt: 8 }}
+      _notLast={{ mb: 3 }}
       {...props}
     />
   ),
   h3: (props) => (
     <Text
       as="h3"
-      textStyle="textLg"
-      fontWeight="bold"
+      textStyle="textMd"
+      fontWeight="semibold"
       fontFamily="sans"
-      marginTop={8}
-      mb={3}
+      _notFirst={{ mt: 8 }}
+      _notLast={{ mb: 3 }}
       {...props}
     />
   ),
   p: (props) => (
-    <Text as="p" textStyle="textBody" _notLast={{ mb: 3 }} {...props} />
+    <Text as="p" textStyle="article" _notLast={{ mb: 3 }} {...props} />
   ),
   ul: (props) => (
     <Text
       as="ul"
-      textStyle="textBody"
-      marginTop={3}
+      textStyle="article"
+      _notFirst={{ mt: 3 }}
       _notLast={{ mb: 3 }}
       pl={8}
       {...props}
@@ -49,55 +57,16 @@ const mdxComponents = {
   ol: (props) => (
     <Text
       as="ol"
-      textStyle="textBody"
-      marginTop={3}
+      textStyle="article"
+      _notFirst={{ mt: 3 }}
       _notLast={{ mb: 3 }}
       pl={8}
       {...props}
     />
   ),
-  li: (props) => (
-    <Text as="li" textStyle="textBody" _notLast={{ mb: 3 }} {...props} />
-  ),
-  table: (props) => (
-    <Box
-      as="table"
-      textStyle="textBody"
-      borderBottom="1px solid black"
-      verticalAlign="top"
-      py={[6, 8]}
-      {...props}
-    />
-  ),
-  thead: (props) => (
-    <Text
-      as="thead"
-      textStyle="textBody"
-      borderBottom="1px solid black"
-      verticalAlign="top"
-      {...props}
-    />
-  ),
-  tbody: (props) => (
-    <Text as="tbody" textStyle="textBody" verticalAlign="top" {...props} />
-  ),
-  tr: (props) => (
-    <Text
-      as="tr"
-      borderBottom="1px solid"
-      borderColor="blackAlpha.300"
-      {...props}
-    />
-  ),
-  td: (props) => (
-    <Text
-      as="td"
-      _first={{ w: ["35%", "30%"] }}
-      _notLast={{ mb: 3 }}
-      {...props}
-    />
-  ),
-  th: (props) => <Text as="td" fontWeight="bold" {...props} />,
+  // li: (props) => (
+  //   <Text as="li" textStyle="textBody" _notLast={{ mb: 3 }} {...props} />
+  // ),
 };
 
 // import { MDXProvider } from "@mdx-js/react";

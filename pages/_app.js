@@ -99,6 +99,12 @@ export default function App({ Component, pageProps }) {
           @font-face {
             font-family: "Signifier";
             font-display: swap;
+            font-weight: 300;
+            src: url("/fonts/signifier-test-light.woff") format("woff");
+          }
+          @font-face {
+            font-family: "Signifier";
+            font-display: swap;
             font-weight: 400;
             src: url("/fonts/signifier-test-regular.woff") format("woff");
           }
@@ -164,6 +170,32 @@ export default function App({ Component, pageProps }) {
             font-display: swap;
             font-weight: 600;
             src: url("/fonts/soehne-mono-test-halbfett.woff") format("woff");
+          }
+          @font-face {
+            font-family: "quadraat";
+            font-display: swap;
+            font-weight: 400;
+            src: url("/fonts/quadraat.woff") format("woff");
+          }
+          @font-face {
+            font-family: "quadraat";
+            font-display: swap;
+            font-weight: 400;
+            font-style: italic;
+            src: url("/fonts/quadraat-italic.woff") format("woff");
+          }
+          @font-face {
+            font-family: "quadraat";
+            font-display: swap;
+            font-weight: 700;
+            src: url("/fonts/quadraat-bold.woff") format("woff");
+          }
+          @font-face {
+            font-family: "quadraat";
+            font-display: swap;
+            font-weight: 700;
+            font-style: italic;
+            src: url("/fonts/quadraat-bolditalic.woff") format("woff");
           }
         `}
       />
